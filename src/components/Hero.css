@@ -366,9 +366,14 @@
 
 /* Mobile */
 @media (max-width: 560px) {
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .hero__content {
-    padding-block: 7rem 4rem;
-    gap: 2rem;
+    padding-block: 6.5rem 1rem;
+    gap: 1.75rem;
   }
 
   .hero__heading {
@@ -385,11 +390,33 @@
     justify-content: center;
   }
 
+  .hero__badges {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    gap: 0.6rem;
+    width: fit-content;
+    margin-inline: auto;
+  }
+
+  .hero__badge:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
   .hero__banner-frame {
     max-width: 320px;
   }
 
   .hero__banner-ring {
     display: none; /* Hide spinning ring on small screens */
+  }
+
+  .hero__scroll-indicator {
+    position: relative;
+    bottom: auto;
+    left: -5px;
+    transform: none;
+    margin: 0.25rem auto 1.5rem;
   }
 }
