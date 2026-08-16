@@ -1,0 +1,181 @@
+/* ── About Section ──────────────────────────────────────────── */
+.about {
+  background: var(--cream);
+}
+
+.about__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* ── Content ────────────────────────────────────────────────── */
+.about__content .section-title em {
+  font-style: italic;
+  color: var(--pink-500);
+}
+
+.about__para {
+  font-size: 1rem;
+  color: var(--text-body);
+  line-height: 1.8;
+  margin-top: 1.1rem;
+}
+
+.about__para strong {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+/* ── Highlights ─────────────────────────────────────────────── */
+.about__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 2rem;
+}
+
+.about__highlight {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.7rem 1rem;
+  background: var(--pink-soft);
+  border: 1px solid var(--pink-100);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--pink-400);
+  transition: all var(--transition-fast);
+}
+
+.about__highlight:hover {
+  background: var(--pink-100);
+  border-left-color: var(--pink-500);
+}
+
+.about__highlight-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.about__highlight-text {
+  font-size: 0.93rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+/* ── Visual ─────────────────────────────────────────────────── */
+.about__visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+}
+
+.about__visual-card {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--pink-soft) 0%, var(--pink-100) 100%);
+  border: 2px solid var(--pink-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: var(--shadow-lg);
+  animation: float 4s ease-in-out infinite;
+}
+
+.about__visual-ring {
+  position: absolute;
+  border-radius: var(--radius-full);
+  border: 1.5px dashed var(--pink-200);
+  animation: spin 18s linear infinite;
+}
+
+.about__visual-ring--outer {
+  inset: -24px;
+}
+
+.about__visual-ring--inner {
+  inset: -12px;
+  border-color: var(--pink-100);
+  animation-direction: reverse;
+  animation-duration: 12s;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.about__visual-emoji {
+  font-size: 4rem;
+  line-height: 1;
+  animation: float 3s ease-in-out infinite;
+}
+
+.about__visual-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.about__visual-tagline {
+  font-family: var(--font-script);
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.about__visual-tagline--pink {
+  color: var(--pink-500);
+  font-size: 1.05rem;
+}
+
+/* ── Floating badges ────────────────────────────────────────── */
+.about__float {
+  position: absolute;
+  padding: 0.5rem 0.9rem;
+  background: #fff;
+  border: 1.5px solid var(--pink-200);
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  box-shadow: var(--shadow-md);
+  white-space: nowrap;
+}
+
+.about__float--1 {
+  top: 16%;
+  right: 4%;
+  animation: float 3.5s ease-in-out infinite;
+}
+
+.about__float--2 {
+  bottom: 18%;
+  left: 2%;
+  animation: float 4.2s ease-in-out infinite 0.5s;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .about__inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about__visual {
+    order: -1;
+    min-height: 280px;
+  }
+
+  .about__visual-card {
+    width: 200px;
+    height: 200px;
+  }
+}
